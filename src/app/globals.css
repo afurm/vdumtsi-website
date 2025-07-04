@@ -1,0 +1,152 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #d6d2c4;
+  --color-secondary: #97A59A;
+  --color-dark-green: #18332f;
+  
+  /* Accent Colors - Group 1 */
+  --color-forest: #2D3F2F;
+  --color-lavender: #B2BBDA;
+  --color-moss: #1D2820;
+  --color-light-gray: #EFEFF4;
+  
+  /* Accent Colors - Group 2 */
+  --color-purple: #311C3B;
+  --color-pink: #EACEE4;
+  --color-orange: #F15B29;
+  --color-cream: #F5F5B8;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(180deg, #d6d2c4 0%, rgba(214, 210, 196, 0) 100%);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-text-primary bg-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-h1;
+  }
+  
+  h2 {
+    @apply text-h2;
+  }
+  
+  h3 {
+    @apply text-h3;
+  }
+  
+  p {
+    @apply text-body leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors duration-200;
+  }
+  
+  /* Custom focus styles */
+  *:focus {
+    @apply outline-none;
+  }
+  
+  *:focus-visible {
+    @apply ring-2 ring-secondary ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Container */
+  .container {
+    @apply mx-auto px-6 md:px-12 lg:px-12 xl:px-12 max-w-7xl;
+  }
+  
+  /* Section spacing */
+  .section {
+    @apply py-20 md:py-24 lg:py-32;
+  }
+  
+  /* Text styles */
+  .text-gradient {
+    @apply bg-gradient-to-r from-dark-green to-secondary bg-clip-text text-transparent;
+  }
+  
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply btn bg-dark-green text-white hover:bg-forest px-8 py-4 text-base;
+  }
+  
+  .btn-secondary {
+    @apply btn border-2 border-secondary text-dark-green hover:bg-secondary/10 px-8 py-4 text-base;
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Animate on scroll */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-4;
+  }
+  
+  .animate-on-scroll.show {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-5deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay-1 {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+.animate-float-delay-2 {
+  animation: float 6s ease-in-out infinite 4s;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "V DUMTSI - Флористична студія",
+  "short_name": "V DUMTSI",
+  "description": "Майстер-класи з флористики та висадка композицій у Львові",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#d6d2c4",
+  "theme_color": "#18332f",
+  "orientation": "portrait-primary",
+  "categories": ["business", "education", "lifestyle"],
+  "lang": "uk",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+} 
