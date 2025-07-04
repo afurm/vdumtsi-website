@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   authors: [{ name: "V DUMTSI" }],
   creator: "V DUMTSI",
   publisher: "V DUMTSI",
+  metadataBase: new URL("https://vdumtsi.com"),
+  alternates: {
+    canonical: "/",
+  },
+  other: {
+    "last-modified": "2025-07-04T00:00:00+00:00",
+  },
   formatDetection: {
     telephone: false,
   },
@@ -31,6 +38,14 @@ export const metadata: Metadata = {
     siteName: "V DUMTSI",
     locale: "uk_UA",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "V DUMTSI - Флористична студія у Львові",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -43,8 +58,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "your-google-site-verification-code",
+  },
   icons: {
     icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 

@@ -13,7 +13,7 @@ export const defaultSEO: DefaultSeoProps = {
     description: 'Флористична студія V DUMTSI у Львові пропонує авторські майстер-класи та висадку сезонних композицій. Відчуйте красу квітів разом з нами.',
     images: [
       {
-        url: 'https://vdumtsi.com/og-image.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'V DUMTSI - Флористична студія у Львові',

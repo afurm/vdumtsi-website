@@ -1,0 +1,18 @@
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d6d2c4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#18332f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="96" cy="96" r="96" fill="url(#iconGradient)"/>
+  
+  <!-- Letter V -->
+  <path d="M 50 60 L 70 130 L 80 130 L 96 80 L 112 130 L 122 130 L 142 60 L 132 60 L 117 115 L 103 70 L 89 70 L 75 115 L 60 60 Z" fill="#18332f" opacity="0.9"/>
+  
+  <!-- Decorative leaf elements -->
+  <ellipse cx="96" cy="45" rx="8" ry="12" fill="#18332f" opacity="0.3"/>
+  <ellipse cx="96" cy="147" rx="6" ry="10" fill="#18332f" opacity="0.3"/>
+</svg> 

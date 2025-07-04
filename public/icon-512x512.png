@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d6d2c4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#18332f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#iconGradient512)"/>
+  
+  <!-- Letter V -->
+  <path d="M 130 160 L 190 350 L 220 350 L 256 220 L 292 350 L 322 350 L 382 160 L 352 160 L 306 310 L 276 190 L 236 190 L 206 310 L 160 160 Z" fill="#18332f" opacity="0.9"/>
+  
+  <!-- Decorative leaf elements -->
+  <ellipse cx="256" cy="120" rx="20" ry="32" fill="#18332f" opacity="0.3"/>
+  <ellipse cx="256" cy="392" rx="16" ry="26" fill="#18332f" opacity="0.3"/>
+  <ellipse cx="180" cy="140" rx="12" ry="18" fill="#18332f" opacity="0.2"/>
+  <ellipse cx="332" cy="140" rx="12" ry="18" fill="#18332f" opacity="0.2"/>
+</svg> 

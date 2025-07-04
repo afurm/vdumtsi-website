@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d6d2c4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#18332f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main Title -->
+  <text x="600" y="250" text-anchor="middle" fill="#18332f" font-family="serif" font-size="72" font-weight="bold">V DUMTSI</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="320" text-anchor="middle" fill="#18332f" font-family="sans-serif" font-size="36" opacity="0.8">Флористична студія</text>
+  
+  <!-- Location -->
+  <text x="600" y="380" text-anchor="middle" fill="#18332f" font-family="sans-serif" font-size="28" opacity="0.7">Львів</text>
+  
+  <!-- Services -->
+  <text x="600" y="450" text-anchor="middle" fill="#18332f" font-family="sans-serif" font-size="24" opacity="0.6">Майстер-класи • Висадка композицій</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="40" fill="#18332f" opacity="0.1"/>
+  <circle cx="1050" cy="480" r="50" fill="#18332f" opacity="0.1"/>
+  <circle cx="100" cy="500" r="25" fill="#18332f" opacity="0.1"/>
+  <circle cx="1100" cy="120" r="30" fill="#18332f" opacity="0.1"/>
+</svg> 
