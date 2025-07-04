@@ -66,7 +66,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-secondary/20 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-            <p>© 2024 V DUMTSI. Всі права захищені.</p>
+            <p>© 2025 V DUMTSI. Всі права захищені.</p>
             <p className="mt-2 md:mt-0">З любовʼю до квітів у Львові 🌸</p>
           </div>
         </div>
