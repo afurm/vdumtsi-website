@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function About() {
   return (
@@ -57,8 +56,8 @@ export default function About() {
                 в найменших деталях.
               </p>
               <p className="italic text-secondary">
-                "Кожна композиція — це діалог між природою та людиною, 
-                де квіти стають мовою почуттів."
+                &quot;Кожна композиція — це діалог між природою та людиною, 
+                де квіти стають мовою почуттів.&quot;
               </p>
             </div>
 

@@ -99,7 +99,7 @@ export default function Gallery() {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Кожна композиція — це унікальна історія, створена з любов'ю до деталей 
+            Кожна композиція — це унікальна історія, створена з любов&apos;ю до деталей 
             та глибоким розумінням краси природи.
           </p>
         </motion.div>

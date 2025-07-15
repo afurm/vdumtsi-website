@@ -63,7 +63,7 @@ export default function SeasonalPlanting() {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Замовте професійну висадку сезонних рослин у кашпо, клумби, інтер'єрні зони. 
+            Замовте професійну висадку сезонних рослин у кашпо, клумби, інтер&apos;єрні зони. 
             Ми підбираємо композиції, що відповідають вашому простору, стилю та порі року.
           </p>
         </motion.div>
@@ -159,7 +159,7 @@ export default function SeasonalPlanting() {
               Готові перетворити ваш простір?
             </h3>
             <p className="text-text-secondary mb-6">
-              Зв'яжіться з нами для безкоштовної консультації та індивідуального підбору рослин
+              Зв&apos;яжіться з нами для безкоштовної консультації та індивідуального підбору рослин
             </p>
             <Button href="#contact" size="lg">
               Замовити консультацію

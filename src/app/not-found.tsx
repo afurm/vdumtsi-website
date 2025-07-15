@@ -24,7 +24,7 @@ export default function NotFound() {
             Сторінку не знайдено
           </h2>
           <p className="text-lg text-text-secondary mb-8 leading-relaxed">
-            Здається, ця сторінка зів'яла... 🥀<br />
+            Здається, ця сторінка зів&apos;яла... 🥀<br />
             Але не хвилюйтеся, поверніться на головну, 
             щоб знайти те, що шукаєте.
           </p>
@@ -42,7 +42,7 @@ export default function NotFound() {
               href="/#contact"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-secondary text-dark-green font-medium rounded-lg hover:bg-secondary/10 transition-all duration-300"
             >
-              📞 Зв'язатися з нами
+              📞 Зв&apos;язатися з нами
             </Link>
           </div>
 
@@ -76,7 +76,7 @@ export default function NotFound() {
 
         {/* Footer note */}
         <p className="mt-8 text-sm text-text-muted italic">
-          З любов'ю до квітів у Львові 🌸
+          З любов&apos;ю до квітів у Львові 🌸
         </p>
       </div>
     </div>

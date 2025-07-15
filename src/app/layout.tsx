@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     google: "your-google-site-verification-code",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
 };
