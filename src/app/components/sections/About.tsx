@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -26,11 +27,17 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-glass border border-white/20 bg-white/10 backdrop-blur-xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-green/10 to-transparent z-10" />
-              {/* Placeholder for founder image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-6xl text-secondary/30">🌸</span>
-              </div>
+              {/* Founder image */}
+              <Image
+                src="/founder.jpg"
+                alt="Мар’яна Фурманець — засновниця V DUMTSI"
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                priority
+                className="object-cover"
+              />
+              {/* Subtle gradient to keep text legible over edges */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-green/10 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-lavender/30 rounded-full blur-2xl" />
           </motion.div>
