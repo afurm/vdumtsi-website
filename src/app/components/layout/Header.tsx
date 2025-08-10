@@ -20,6 +20,8 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
+    // Initialize immediately to avoid visual delay, then subscribe
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,10 +43,11 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          // Keep blur always on, and only adjust background/decoration on scroll to avoid heavy re-render cost
+          "fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-colors duration-200",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+            ? "bg-white/30 shadow-sm border-b border-white/20"
+            : "bg-white/0"
         )}
       >
         <nav className="container mx-auto px-6 py-4 md:py-6">
