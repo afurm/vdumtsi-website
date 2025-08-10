@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary/20 pt-16 pb-8">
+    <footer className="pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 glass rounded-2xl p-8">
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl text-dark-green mb-4">V DUMTSI</h3>
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-secondary/20 pt-6">
+        <div className="border-t border-white/20 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
             <p>© 2025 V DUMTSI. Всі права захищені.</p>
             <p className="mt-2 md:mt-0">З любовʼю до квітів у Львові 🌸</p>

@@ -3,6 +3,27 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+function Lightbox({ open, onClose, item }: { open: boolean; onClose: () => void; item: { title: string; description: string; placeholder: string } | null }) {
+  if (!open || !item) return null;
+  return (
+    <div className="fixed inset-0 z-[60]" role="dialog" aria-modal="true" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="relative z-[61] max-w-3xl mx-auto h-full flex items-center justify-center p-6">
+        <div className="glass rounded-2xl p-6 w-full" onClick={(e) => e.stopPropagation()}>
+          <div className="aspect-video mb-4 flex items-center justify-center text-7xl opacity-60">
+            {item.placeholder}
+          </div>
+          <h4 className="font-serif text-xl text-dark-green mb-2">{item.title}</h4>
+          <p className="text-text-secondary">{item.description}</p>
+          <div className="mt-4 text-right">
+            <button className="px-4 py-2 glass rounded-lg" onClick={onClose}>Закрити</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const categories = [
   { id: 'all', name: 'Всі роботи' },
   { id: 'masterclasses', name: 'Майстер-класи' },
@@ -79,13 +100,15 @@ const galleryItems = [
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState<typeof galleryItems[number] | null>(null);
 
   const filteredItems = activeCategory === 'all' 
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-20 bg-white">
+    <section id="gallery" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,8 +141,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-2 rounded-full transition-all duration-300 ${
                 activeCategory === category.id
-                  ? 'bg-secondary text-white shadow-md'
-                  : 'bg-light-gray/50 text-text-secondary hover:bg-secondary/20'
+                  ? 'glass text-dark-green'
+                  : 'bg-white/10 text-text-secondary hover:bg-secondary/20 border border-white/20 backdrop-blur-xl'
               }`}
             >
               {category.name}
@@ -137,17 +160,18 @@ export default function Gallery() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
               className="group cursor-pointer"
+              onClick={() => { setActiveItem(item); setLightboxOpen(true); }}
             >
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="rounded-2xl overflow-hidden shadow-glass hover:shadow-glassHover transition-all duration-300 border border-white/20 bg-white/10 backdrop-blur-xl">
                 {/* Image Placeholder */}
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                <div className="aspect-square bg-gradient-to-br from-white/0 to-white/0 flex items-center justify-center relative overflow-hidden">
                   <span className="text-6xl opacity-30 group-hover:scale-110 transition-transform duration-300">
                     {item.placeholder}
                   </span>
-                  <div className="absolute inset-0 bg-dark-green/0 group-hover:bg-dark-green/10 transition-all duration-300" />
+                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-secondary/20 transition-all duration-300" />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-green/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-green/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 text-white w-full">
                       <h3 className="font-serif text-lg mb-1">{item.title}</h3>
                       <p className="text-sm opacity-90">{item.description}</p>
@@ -167,7 +191,7 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-8 max-w-2xl mx-auto">
+          <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
             <span className="text-4xl mb-4 block">📸</span>
             <h3 className="font-serif text-2xl text-dark-green mb-4">
               Більше робіт в Instagram
@@ -180,7 +204,7 @@ export default function Gallery() {
               href="https://instagram.com/vdumtsi.studio.floristry"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-dark-green text-white font-medium rounded-lg hover:bg-forest transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 bg-dark-green text-white font-medium rounded-xl hover:bg-forest transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
             >
               <span className="mr-2">📱</span>
               @vdumtsi.studio.floristry
@@ -188,6 +212,7 @@ export default function Gallery() {
           </div>
         </motion.div>
       </div>
+      <Lightbox open={lightboxOpen} onClose={() => setLightboxOpen(false)} item={activeItem ? { title: activeItem.title, description: activeItem.description, placeholder: activeItem.placeholder } : null} />
     </section>
   );
 } 

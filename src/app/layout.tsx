@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import MobileCtaBar from "./components/layout/MobileCtaBar";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -75,7 +76,13 @@ export default function RootLayout({
   return (
     <html lang="uk" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
+        <div className="pointer-events-none fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-liquid" />
+          <div className="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-white/6 blur-3xl" />
+          <div className="absolute -bottom-24 -right-16 w-96 h-96 rounded-full bg-white/6 blur-3xl" />
+        </div>
         {children}
+        <MobileCtaBar />
       </body>
     </html>
   );

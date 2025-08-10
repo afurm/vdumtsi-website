@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Button from "../ui/Button";
 
 const navigation = [
   { name: "Майстер-класи", href: "#masterclasses" },
@@ -43,11 +44,11 @@ export default function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm"
+            ? "glass bg-white/30"
             : "bg-transparent"
         )}
       >
-        <nav className="container mx-auto px-6 py-4 md:py-6">
+        <nav className="container mx-auto px-6 py-3 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link
@@ -74,6 +75,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              <Button href="#contact" variant="glass" className="ml-2">Записатися</Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -111,11 +113,11 @@ export default function Header() {
       {/* Mobile Menu - Outside header to prevent transparency issues */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 bg-white z-40 transition-transform duration-300",
+          "md:hidden fixed inset-0 z-40 transition-transform duration-300 backdrop-blur-2xl",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-center h-full space-y-8 bg-white/30">
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -130,7 +132,7 @@ export default function Header() {
           {/* Close menu button */}
           <button
             onClick={() => setIsMenuOpen(false)}
-            className="mt-8 px-6 py-2 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors"
+            className="mt-8 px-6 py-2 rounded-full glass glass-hover text-dark-green"
           >
             Закрити меню
           </button>

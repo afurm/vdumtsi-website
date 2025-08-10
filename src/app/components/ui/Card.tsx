@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 interface CardProps {
   children: ReactNode;
   className?: string;
-  variant?: 'default' | 'outlined' | 'elevated' | 'ghost';
+  variant?: 'default' | 'outlined' | 'elevated' | 'ghost' | 'glass' | 'frosted';
   size?: 'sm' | 'md' | 'lg';
   hover?: boolean;
   onClick?: () => void;
@@ -14,7 +14,9 @@ const variantClasses = {
   default: 'bg-white border border-gray-100 shadow-sm',
   outlined: 'bg-white border-2 border-secondary/20',
   elevated: 'bg-white shadow-lg',
-  ghost: 'bg-transparent'
+  ghost: 'bg-transparent',
+  glass: 'glass rounded-xl',
+  frosted: 'frosted rounded-xl'
 };
 
 const sizeClasses = {
@@ -40,7 +42,7 @@ export default function Card({
         'transition-all duration-300',
         variantClasses[variant],
         sizeClasses[size],
-        hover && 'hover:shadow-lg hover:scale-105',
+        hover && 'hover:shadow-glassHover hover:scale-[1.02]',
         onClick && 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',
         className
       )}

@@ -42,9 +42,9 @@ const workingHours = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-light-gray/30">
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -71,7 +71,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="bg-white rounded-lg p-8 shadow-sm">
+            <div className="glass rounded-2xl p-8">
               <h3 className="font-serif text-2xl text-dark-green mb-6">
                 Контактна інформація
               </h3>
@@ -86,7 +86,7 @@ export default function Contact() {
                     viewport={{ once: true }}
                     className="flex items-start space-x-4"
                   >
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 glass">
                       <span className="text-xl">{method.icon}</span>
                     </div>
                     <div className="flex-1">
@@ -118,7 +118,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg p-8 shadow-sm"
+              className="glass rounded-2xl p-8"
             >
               <h3 className="font-serif text-xl text-dark-green mb-4">
                 Графік роботи
@@ -140,14 +140,14 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="bg-white rounded-lg p-8 shadow-sm h-fit"
+            className="glass rounded-2xl p-8 h-fit"
           >
             <h3 className="font-serif text-2xl text-dark-green mb-6">
               Записатися на майстер-клас
             </h3>
             
             <div className="space-y-6">
-              <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg">
+              <div className="text-center p-8 glass rounded-2xl">
                 <span className="text-4xl mb-4 block">🌸</span>
                 <h4 className="font-serif text-xl text-dark-green mb-4">
                   Марʼяна Фурманець
@@ -170,6 +170,7 @@ export default function Contact() {
                     href="tel:+380734304649" 
                     className="w-full justify-center"
                     size="lg"
+                    variant="glass"
                   >
                     📞 Зателефонувати
                   </Button>

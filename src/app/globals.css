@@ -33,7 +33,11 @@
   }
   
   body {
-    @apply font-sans text-text-primary bg-white antialiased;
+    @apply font-sans text-text-primary antialiased min-h-screen relative overflow-x-hidden;
+    background: radial-gradient(1200px circle at 0% 0%, rgba(151,165,154,0.18), transparent 35%),
+                radial-gradient(900px circle at 100% 0%, rgba(178,187,218,0.18), transparent 30%),
+                radial-gradient(900px circle at 50% 100%, rgba(234,206,228,0.18), transparent 35%),
+                #f8fafc;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -101,7 +105,7 @@
   
   /* Card styles */
   .card {
-    @apply bg-white rounded-lg p-6 transition-all duration-300 hover:shadow-lg;
+    @apply rounded-xl p-6 transition-all duration-300 shadow-glass hover:shadow-glassHover border border-white/20 bg-white/10 backdrop-blur-xl;
   }
 }
 
@@ -149,4 +153,24 @@
 
 .animate-float-delay-2 {
   animation: float 6s ease-in-out infinite 4s;
+}
+
+/* Glass tokens */
+.glass {
+  @apply border border-white/20 bg-white/10 backdrop-blur-xl shadow-glass;
+}
+.glass-hover:hover {
+  @apply shadow-glassHover bg-white/15 border-white/30;
+}
+.frosted {
+  @apply bg-white/30 backdrop-blur-2xl border border-white/30 shadow-glass;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

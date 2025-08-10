@@ -6,7 +6,7 @@ interface SectionProps {
   className?: string;
   id?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  background?: 'white' | 'light' | 'primary' | 'secondary' | 'transparent';
+  background?: 'white' | 'light' | 'primary' | 'secondary' | 'transparent' | 'glass';
 }
 
 const sizeClasses = {
@@ -21,7 +21,8 @@ const backgroundClasses = {
   light: 'bg-light-gray/30',
   primary: 'bg-primary/10',
   secondary: 'bg-secondary/10',
-  transparent: 'bg-transparent'
+  transparent: 'bg-transparent',
+  glass: 'glass'
 };
 
 export default function Section({ 

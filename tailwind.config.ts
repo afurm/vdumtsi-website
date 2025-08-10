@@ -35,6 +35,12 @@ const config: Config = {
         "text-secondary": "#2D3F2F",
         "text-muted": "#97A59A",
       },
+      boxShadow: {
+        glass:
+          "inset 0 1px 0 0 rgba(255,255,255,0.28), 0 8px 30px rgba(0,0,0,0.12)",
+        glassHover:
+          "inset 0 1px 0 0 rgba(255,255,255,0.36), 0 12px 40px rgba(0,0,0,0.18)",
+      },
       fontSize: {
         // Responsive font sizes using clamp
         "hero-h1": "clamp(1.75rem, 5vw, 5rem)",
@@ -78,6 +84,8 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-primary": "linear-gradient(180deg, #d6d2c4 0%, rgba(214, 210, 196, 0) 100%)",
+        liquid:
+          "radial-gradient(1200px circle at 0% 0%, rgba(151,165,154,0.25), transparent 40%), radial-gradient(1000px circle at 100% 0%, rgba(178,187,218,0.25), transparent 35%), radial-gradient(1000px circle at 50% 100%, rgba(234,206,228,0.25), transparent 40%)",
       },
       maxWidth: {
         "8xl": "88rem", // 1408px

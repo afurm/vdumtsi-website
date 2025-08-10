@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,7 +14,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="font-serif text-h2 text-dark-green mb-4">Хто ми</h2>
-          <div className="w-20 h-1 bg-secondary mx-auto" />
+          <div className="w-20 h-1 bg-secondary/60 mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -25,14 +25,14 @@ export default function About() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/5] relative rounded-lg overflow-hidden shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-green/20 to-transparent z-10" />
+            <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-glass border border-white/20 bg-white/10 backdrop-blur-xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-green/10 to-transparent z-10" />
               {/* Placeholder for founder image */}
-              <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-6xl text-secondary/30">🌸</span>
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-lavender/20 rounded-full blur-2xl" />
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-lavender/30 rounded-full blur-2xl" />
           </motion.div>
 
           <motion.div
@@ -40,7 +40,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="lg:pl-8"
+            className="lg:pl-8 glass rounded-2xl p-8"
           >
             <h3 className="font-serif text-3xl text-dark-green mb-6">
               Студія V DUMTSI заснована Марʼяною Фурманець

@@ -5,9 +5,12 @@ import Button from "../ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-white to-white" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-28 md:pb-0">
+      {/* Liquid glass background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-liquid" />
+        <div className="absolute left-1/2 top-28 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-white/10 blur-3xl" />
+      </div>
       
       {/* Floating flower elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -89,7 +92,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button href="#masterclasses" size="lg">
+          <Button href="#masterclasses" size="lg" variant="primary">
             Записатися на майстер-клас
           </Button>
           <Button href="#services" variant="secondary" size="lg">

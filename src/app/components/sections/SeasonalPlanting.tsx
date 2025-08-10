@@ -49,7 +49,7 @@ const processSteps = [
 
 export default function SeasonalPlanting() {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function SeasonalPlanting() {
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6"
+                className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 glass"
               >
                 <span className="text-3xl">{service.icon}</span>
               </motion.div>
@@ -108,7 +108,7 @@ export default function SeasonalPlanting() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-light-gray/30 rounded-lg p-8 md:p-12 mb-12"
+          className="glass rounded-2xl p-8 md:p-12 mb-12"
         >
           <div className="text-center mb-12">
             <h3 className="font-serif text-3xl text-dark-green mb-4">
@@ -132,7 +132,7 @@ export default function SeasonalPlanting() {
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-secondary/30 -translate-y-1/2" />
                 )}
-                <div className="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-serif text-lg font-bold">
+                <div className="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-serif text-lg font-bold shadow-glass">
                   {step.step}
                 </div>
                 <h4 className="font-semibold text-dark-green mb-2">
@@ -154,7 +154,7 @@ export default function SeasonalPlanting() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg p-8 max-w-2xl mx-auto">
+          <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="font-serif text-2xl text-dark-green mb-4">
               Готові перетворити ваш простір?
             </h3>
