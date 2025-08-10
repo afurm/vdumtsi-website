@@ -8,7 +8,6 @@ type MasterClass = {
   description: string;
   duration: string;
   includes: string[];
-  icon: string;
   price?: string;
   priceBadge?: string;
 };
@@ -26,7 +25,6 @@ const masterClasses: MasterClass[] = [
       "Техніка складання \"спіраль\", точка збору, баланс, ритм",
       "Фініш: пакування і догляд після МК",
     ],
-    icon: "💐",
     price: "Вартість: від 1800 грн/особа",
     priceBadge: "від 1800₴",
   },
@@ -41,7 +39,6 @@ const masterClasses: MasterClass[] = [
       "Як садити, доглядати і пересаджувати",
       "Декорування мохом, камінням, натуральними елементами",
     ],
-    icon: "🌿",
     price: "Вартість: від 1500 грн/особа",
     priceBadge: "від 1500₴",
   },
@@ -56,7 +53,6 @@ const masterClasses: MasterClass[] = [
       "Композиція без оази або з нею - залежно від формату",
       "Секрети стабільності та догляду",
     ],
-    icon: "🎃",
     price: "Вартість: від 1800 грн/особа",
     priceBadge: "від 1800₴",
   },
@@ -71,7 +67,6 @@ const masterClasses: MasterClass[] = [
       "Як продовжити життя композиції/віночка",
       "Безпечне використання свічок у флористиці, кріплення",
     ],
-    icon: "❄️",
     price: "Вартість віночка: від 2000 грн/особа | Вартість композиції: від 2400 грн/особа",
     priceBadge: "від 2000₴ / 2400₴",
   },
@@ -86,7 +81,6 @@ const masterClasses: MasterClass[] = [
       "Працюємо з квітами, гілками, травами",
       "Як зробити композицію довговічною і стильною",
     ],
-    icon: "🪷",
     price: "Вартість: від 2200 грн/особа (*Кензан, піала, квіти забираєте з собою)",
     priceBadge: "від 2200₴",
   },
@@ -126,7 +120,6 @@ export default function MasterClasses() {
               className="bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               <div className="text-center mb-6">
-                <span className="text-4xl mb-4 block">{masterClass.icon}</span>
                 <h3 className="font-serif text-xl text-dark-green mb-2">
                   {masterClass.title}
                 </h3>
@@ -149,7 +142,7 @@ export default function MasterClasses() {
                 <h4 className="font-semibold text-dark-green text-sm uppercase tracking-wide">
                   Вивчаємо
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2 list-disc pl-6">
                   {masterClass.includes.map((item, itemIndex) => (
                     <motion.li
                       key={itemIndex}
@@ -157,9 +150,8 @@ export default function MasterClasses() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: (index * 0.1) + (itemIndex * 0.05) }}
                       viewport={{ once: true }}
-                      className="flex items-start text-sm text-text-secondary leading-relaxed"
+                      className="text-sm text-text-secondary leading-relaxed"
                     >
-                      <span aria-hidden className="mr-3 mt-0.5">✅</span>
                       {item}
                     </motion.li>
                   ))}
