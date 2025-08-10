@@ -2,12 +2,14 @@
 
 import { motion } from "framer-motion";
 import Button from "../ui/Button";
+import Card from "../ui/Card";
 
 type MasterClass = {
   title: string;
   description: string;
   duration: string;
   includes: string[];
+  icon: string;
   price?: string;
   priceBadge?: string;
 };
@@ -25,6 +27,7 @@ const masterClasses: MasterClass[] = [
       "Техніка складання \"спіраль\", точка збору, баланс, ритм",
       "Фініш: пакування і догляд після МК",
     ],
+    icon: "💐",
     price: "Вартість: від 1800 грн/особа",
     priceBadge: "від 1800₴",
   },
@@ -39,6 +42,7 @@ const masterClasses: MasterClass[] = [
       "Як садити, доглядати і пересаджувати",
       "Декорування мохом, камінням, натуральними елементами",
     ],
+    icon: "🌿",
     price: "Вартість: від 1500 грн/особа",
     priceBadge: "від 1500₴",
   },
@@ -53,6 +57,7 @@ const masterClasses: MasterClass[] = [
       "Композиція без оази або з нею - залежно від формату",
       "Секрети стабільності та догляду",
     ],
+    icon: "🎃",
     price: "Вартість: від 1800 грн/особа",
     priceBadge: "від 1800₴",
   },
@@ -67,6 +72,7 @@ const masterClasses: MasterClass[] = [
       "Як продовжити життя композиції/віночка",
       "Безпечне використання свічок у флористиці, кріплення",
     ],
+    icon: "❄️",
     price: "Вартість віночка: від 2000 грн/особа | Вартість композиції: від 2400 грн/особа",
     priceBadge: "від 2000₴ / 2400₴",
   },
@@ -81,6 +87,7 @@ const masterClasses: MasterClass[] = [
       "Працюємо з квітами, гілками, травами",
       "Як зробити композицію довговічною і стильною",
     ],
+    icon: "🪷",
     price: "Вартість: від 2200 грн/особа (*Кензан, піала, квіти забираєте з собою)",
     priceBadge: "від 2200₴",
   },
@@ -88,7 +95,13 @@ const masterClasses: MasterClass[] = [
 
 export default function MasterClasses() {
   return (
-    <section id="masterclasses" className="py-20 bg-light-gray/30">
+    <section id="masterclasses" className="relative overflow-hidden py-20 bg-light-gray/30">
+      {/* Decorative background accents */}
+      <div aria-hidden className="absolute inset-0 -z-10">
+        <div className="absolute -top-20 -left-20 h-80 w-80 rounded-full bg-gradient-radial from-secondary/20 to-transparent blur-2xl" />
+        <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-gradient-radial from-primary/30 to-transparent blur-2xl" />
+      </div>
+
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -116,64 +129,64 @@ export default function MasterClasses() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+              whileHover={{ y: -4 }}
             >
-              <div className="text-center mb-6">
-                <h3 className="font-serif text-xl text-dark-green mb-2">
-                  {masterClass.title}
-                </h3>
-                <p className="text-text-secondary text-sm mb-3">
-                  {masterClass.description}
-                </p>
-                <div className="flex items-center justify-center gap-2 flex-wrap">
-                  <span className="inline-block px-3 py-1 bg-primary/20 text-secondary text-sm rounded-full">
-                    {masterClass.duration}
-                  </span>
-                  {masterClass.priceBadge && (
-                    <span className="inline-block px-3 py-1 glass text-dark-green text-sm rounded-full">
-                      {masterClass.priceBadge}
+              <Card variant="outlined" size="lg" hover className="relative flex h-full flex-col">
+                <div className="text-center mb-6">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-secondary/10 text-2xl text-dark-green">
+                    {masterClass.icon}
+                  </div>
+                  <h3 className="font-serif text-xl text-dark-green mb-2">
+                    {masterClass.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm mb-3">
+                    {masterClass.description}
+                  </p>
+                  <div className="flex items-center justify-center gap-2 flex-wrap">
+                    <span className="inline-block rounded-full bg-primary/20 px-3 py-1 text-sm text-secondary">
+                      {masterClass.duration}
                     </span>
-                  )}
+                  </div>
                 </div>
-              </div>
 
-              <div className="space-y-3 mb-4">
-                <h4 className="font-semibold text-dark-green text-sm uppercase tracking-wide">
-                  Вивчаємо
-                </h4>
-                <ul className="space-y-2 list-disc pl-6">
-                  {masterClass.includes.map((item, itemIndex) => (
-                    <motion.li
-                      key={itemIndex}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: (index * 0.1) + (itemIndex * 0.05) }}
-                      viewport={{ once: true }}
-                      className="text-sm text-text-secondary leading-relaxed"
-                    >
-                      {item}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-
-              {masterClass.price && (
-                <div className="text-sm text-dark-green/80 pt-4 mt-4 border-t border-secondary/20">
-                  {masterClass.price}
+                <div className="mb-4 space-y-3">
+                  <h4 className="text-sm font-semibold uppercase tracking-wide text-dark-green">
+                    Вивчаємо
+                  </h4>
+                  <ul className="space-y-2">
+                    {masterClass.includes.map((item, itemIndex) => (
+                      <motion.li
+                        key={itemIndex}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 + itemIndex * 0.05 }}
+                        viewport={{ once: true }}
+                        className="flex items-start text-sm leading-relaxed text-text-secondary"
+                      >
+                        <span aria-hidden className="mr-3 mt-0.5">✅</span>
+                        {item}
+                      </motion.li>
+                    ))}
+                  </ul>
                 </div>
-              )}
 
-              <div className="mt-auto pt-6">
-                <Button 
-                  href="#contact" 
-                  variant="secondary" 
-                  className="w-full"
-                  aria-label={`Записатися — ${masterClass.title}`}
-                >
-                  Записатися
-                </Button>
-              </div>
+                {masterClass.price && (
+                  <div className="mt-4 border-top border-secondary/20 pt-4 text-sm text-dark-green/80">
+                    {masterClass.price}
+                  </div>
+                )}
+
+                <div className="mt-auto pt-6">
+                  <Button
+                    href="#contact"
+                    variant="secondary"
+                    className="w-full"
+                    aria-label={`Записатися — ${masterClass.title}`}
+                  >
+                    Записатися
+                  </Button>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
