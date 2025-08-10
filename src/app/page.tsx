@@ -4,7 +4,7 @@ import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import MasterClasses from "./components/sections/MasterClasses";
 import SeasonalPlanting from "./components/sections/SeasonalPlanting";
-import Gallery from "./components/sections/Gallery";
+import GalleryServer from "./components/sections/GalleryServer";
 import Contact from "./components/sections/Contact";
 import { jsonLdSchema } from "@/config/seo";
 
@@ -23,7 +23,8 @@ export default function Home() {
       <About />
       <MasterClasses />
       <SeasonalPlanting />
-      <Gallery />
+      {/* Server component reads files from public/gallery and passes to client Gallery */}
+      <GalleryServer />
       <Contact />
       </main>
       <Footer />
