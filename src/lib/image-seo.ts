@@ -59,8 +59,6 @@ export function generateOptimizedAlt(
   category?: string,
   keywords: string[] = []
 ): string {
-  const defaultKeywords = ["флористика Львів", "V DUMTSI", "квіткові композиції"];
-  const allKeywords = [...defaultKeywords, ...keywords];
   
   const categoryMap: Record<string, string> = {
     masterclasses: "майстер-клас з флористики",
