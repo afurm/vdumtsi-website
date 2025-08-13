@@ -65,9 +65,9 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="font-serif text-hero-h1 text-dark-green mb-6 leading-tight">
-            Майстер-класи з флористики
+            Авторські майстер-класи з флористики
             <br />
-            та висадка квітів у Львові
+            та висадка композицій у Львові
           </h1>
         </motion.div>
 

@@ -63,11 +63,20 @@ export default function Footer() {
                   className="hover:text-secondary transition-colors"
                 >
                   вул. Малоголосківська, 12-Г<br />
-                  Львів, Львівська область
+                  Львів, Львівська область, 79000
                 </a>
               </p>
               <p className="text-text-secondary">
-                Марʼяна Фурманець
+                <a href="mailto:vdumtsi@gmail.com" className="hover:text-secondary transition-colors">
+                  vdumtsi@gmail.com
+                </a>
+              </p>
+              <p className="text-text-secondary">
+                Марʼяна Фурманець - професійний флорист
+              </p>
+              <p className="text-text-secondary text-sm">
+                Понеділок-П&apos;ятниця: 9:00-19:00<br />
+                Субота: 10:00-18:00
               </p>
             </div>
           </div>

@@ -101,9 +101,11 @@ export const jsonLdSchema = {
   },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'вул. Малоголосківська, 12-Г',
     addressLocality: 'Львів',
-    addressCountry: 'UA',
     addressRegion: 'Львівська область',
+    postalCode: '79000',
+    addressCountry: 'UA',
   },
   geo: {
     '@type': 'GeoCoordinates',
@@ -122,19 +124,57 @@ export const jsonLdSchema = {
       {
         '@type': 'Offer',
         itemOffered: {
-          '@type': 'Service',
-          name: 'Майстер-класи з флористики',
-          description: 'Навчання основам флористики та створення композицій',
+          '@type': 'EducationalOccupationalProgram',
+          name: 'Майстер-клас "Букет для себе чи на подарунок"',
+          description: 'Навчання створенню букетів для початківців. Вивчаємо основи колористики, техніку спіраль, підготовку матеріалу.',
+          provider: {
+            '@type': 'Organization',
+            name: 'V DUMTSI'
+          },
+          timeRequired: 'PT2H30M',
+          educationalLevel: 'Початківець',
+          teaches: ['Основи колористики', 'Техніка складання спіраль', 'Підбір квітів за сезонністю']
         },
+        price: '1800',
+        priceCurrency: 'UAH',
+        availability: 'https://schema.org/InStock'
       },
       {
         '@type': 'Offer',
         itemOffered: {
-          '@type': 'Service',
-          name: 'Висадка сезонних композицій',
-          description: 'Професійна висадка рослин у кашпо та клумби',
+          '@type': 'EducationalOccupationalProgram',
+          name: 'Майстер-клас "Сезонна висадка композицій"',
+          description: 'Практичний майстер-клас з висадки живих композицій з сезонних рослин у кашпо.',
+          provider: {
+            '@type': 'Organization',
+            name: 'V DUMTSI'
+          },
+          timeRequired: 'PT1H30M',
+          educationalLevel: 'Початківець',
+          teaches: ['Підбір рослин', 'Техніки висадки', 'Догляд за композиціями']
         },
+        price: '1500',
+        priceCurrency: 'UAH',
+        availability: 'https://schema.org/InStock'
       },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'EducationalOccupationalProgram',
+          name: 'Майстер-клас "Композиція на кензані"',
+          description: 'Унікальний майстер-клас з японської техніки флористики з використанням кензана.',
+          provider: {
+            '@type': 'Organization',
+            name: 'V DUMTSI'
+          },
+          timeRequired: 'PT2H',
+          educationalLevel: 'Середній',
+          teaches: ['Японські техніки флористики', 'Робота з кензаном', 'Мінімалістичний дизайн']
+        },
+        price: '2200',
+        priceCurrency: 'UAH',
+        availability: 'https://schema.org/InStock'
+      }
     ],
   },
   aggregateRating: {

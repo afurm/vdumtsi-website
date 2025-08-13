@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Майстер-класи та висадка композицій у Львові | V DUMTSI",
   description: "Флористична студія V DUMTSI у Львові пропонує авторські майстер-класи та висадку сезонних композицій. Відчуйте красу квітів разом з нами.",
-  keywords: "майстер-класи флористика Львів, висадка сезонних композицій Львів, флорист Львів, флористична студія Львів, квіткові майстер-класи, висадка квітів в кашпо Львів",
+  keywords: "майстер-класи флористика Львів, навчання флористиці Львів, курси флористики Львів, висадка сезонних композицій Львів, флорист Львів, флористична студія Львів, квіткові майстер-класи, букети своїми руками Львів, японська флористика кензан, композиції в гарбузі Львів, зимові віночки майстер-клас, Марʼяна Фурманець флорист",
   authors: [{ name: "V DUMTSI" }],
   creator: "V DUMTSI",
   publisher: "V DUMTSI",
@@ -26,9 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  other: {
-    "last-modified": "2025-07-04T00:00:00+00:00",
-  },
+
   formatDetection: {
     telephone: false,
   },
@@ -61,6 +59,13 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-site-verification-code",
+  },
+  other: {
+    "geo.region": "UA-46",
+    "geo.placename": "Львів",
+    "geo.position": "49.8397;24.0297",
+    "ICBM": "49.8397, 24.0297",
+    "last-modified": "2025-01-04T00:00:00+00:00",
   },
   icons: {
     icon: "/favicon.svg",

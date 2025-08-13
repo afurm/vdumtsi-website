@@ -62,8 +62,12 @@ export function generateOptimizedAlt(
   const categoryMap: Record<string, string> = {
     masterclasses: "майстер-клас з флористики",
     arrangements: "флористична композиція", 
-    seasonal: "сезонна квіткова композиція",
-    events: "оформлення події квітами"
+    seasonal: "сезонна квіткова композиція та висадка рослин",
+    events: "оформлення події квітами",
+    bouquet: "букет створений на майстер-класі",
+    wreath: "зимовий віночок та святкова композиція",
+    pumpkin: "осіння композиція в гарбузі",
+    kenzan: "японська флористика кензан"
   };
   
   let alt = baseDescription;
