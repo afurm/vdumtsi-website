@@ -43,7 +43,7 @@ function generateImageAlt(item: GalleryItem): string {
     baseDescription = categoryDescriptions[item.category] || "Флористична робота";
   }
   
-  return generateOptimizedAlt(baseDescription, item.category, ["професійна флористика", "квіткові букети"]);
+  return generateOptimizedAlt(baseDescription, item.category);
 }
 
 interface GalleryProps {

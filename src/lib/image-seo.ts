@@ -56,8 +56,7 @@ export function generateImageStructuredData(images: ImageSEOData[], baseUrl: str
  */
 export function generateOptimizedAlt(
   baseDescription: string,
-  category?: string,
-  keywords: string[] = []
+  category?: string
 ): string {
   
   const categoryMap: Record<string, string> = {
