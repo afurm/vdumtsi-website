@@ -56,8 +56,18 @@ export default function Footer() {
                 </a>
               </p>
               <p className="text-text-secondary">
-                Марʼяна Фурманець<br />
-                Львів, Україна
+                <a 
+                  href="https://maps.google.com/?q=вул.+Малоголосківська,+12-Г,+Львів,+Львівська+область"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-secondary transition-colors"
+                >
+                  вул. Малоголосківська, 12-Г<br />
+                  Львів, Львівська область
+                </a>
+              </p>
+              <p className="text-text-secondary">
+                Марʼяна Фурманець
               </p>
             </div>
           </div>

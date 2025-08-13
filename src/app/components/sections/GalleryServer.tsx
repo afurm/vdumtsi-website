@@ -1,6 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 import Gallery, { type GalleryItem } from "./Gallery";
+import GalleryStructuredData from "../seo/GalleryStructuredData";
 
 const CATEGORY_IDS = [
   "masterclasses",
@@ -68,7 +69,12 @@ async function readGalleryItems(): Promise<GalleryItem[]> {
 
 export default async function GalleryServer() {
   const items = await readGalleryItems();
-  return <Gallery items={items} />;
+  return (
+    <>
+      <GalleryStructuredData items={items} />
+      <Gallery items={items} />
+    </>
+  );
 }
 
 

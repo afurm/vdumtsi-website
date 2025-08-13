@@ -157,4 +157,30 @@ export const jsonLdSchema = {
       reviewBody: 'Чудові майстер-класи! Марʼяна професійно навчає та надихає на творчість.',
     },
   ],
+  image: [
+    {
+      '@type': 'ImageObject',
+      contentUrl: 'https://vdumtsi.com/founder.jpg',
+      url: 'https://vdumtsi.com/founder.jpg',
+      name: 'Мар\'яна Фурманець — засновниця студії флористики V DUMTSI',
+      description: 'Засновниця та головний флорист студії V DUMTSI у Львові',
+      width: 800,
+      height: 1000,
+      encodingFormat: 'image/jpeg',
+      creator: {
+        '@type': 'Organization',
+        name: 'V DUMTSI'
+      }
+    },
+    {
+      '@type': 'ImageObject',
+      contentUrl: 'https://vdumtsi.com/og-image.jpg',
+      url: 'https://vdumtsi.com/og-image.jpg',
+      name: 'V DUMTSI - Флористична студія у Львові',
+      description: 'Майстер-класи з флористики та висадка сезонних композицій',
+      width: 1200,
+      height: 630,
+      encodingFormat: 'image/jpeg'
+    }
+  ]
 }; 
