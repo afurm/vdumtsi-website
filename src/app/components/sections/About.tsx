@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { getResponsiveImageSizes, generateBlurDataURL } from "@/lib/image-seo";
 
 export default function About() {
   return (
@@ -30,11 +31,13 @@ export default function About() {
               {/* Founder image */}
               <Image
                 src="/founder.jpg"
-                alt="Мар’яна Фурманець — засновниця V DUMTSI"
+                alt="Мар'яна Фурманець — засновниця студії флористики V DUMTSI у Львові, майстер флористичних композицій та викладач майстер-класів"
                 fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
+                sizes={getResponsiveImageSizes('about')}
                 priority
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL={generateBlurDataURL()}
               />
               {/* Subtle gradient to keep text legible over edges */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark-green/10 to-transparent" />
