@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue } from "next/font/google";
+import { absoluteUrl, siteConfig } from "@/config/site";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -10,56 +11,72 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Майстер‑класи з флористики у Львові | V DUMTSI",
-  description:
-    "Індивідуальні та групові майстер‑класи з флористики у Львові. Подарункові сертифікати, корпоративи, дівич‑вечори та творчі події від V DUMTSI.",
-  keywords:
-    "майстер‑клас з флористики Львів, флористичний майстер‑клас Львів, подарунковий сертифікат майстер‑клас флористика, корпоративний майстер‑клас Львів, дівич‑вечір Львів майстер‑клас, V DUMTSI майстер‑клас",
-  authors: [{ name: "V DUMTSI" }],
-  creator: "V DUMTSI",
-  publisher: "V DUMTSI",
-  metadataBase: new URL("https://vdumtsi.com"),
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  applicationName: siteConfig.name,
+  category: "floristry workshops",
   alternates: {
     canonical: "/",
+    languages: {
+      uk: "/",
+    },
   },
-
+  manifest: "/site.webmanifest",
   formatDetection: {
     telephone: false,
   },
   openGraph: {
-    title: "Майстер‑класи з флористики у Львові | V DUMTSI",
-    description:
-      "Індивідуальні та групові майстер‑класи з флористики у Львові. Сертифікати, корпоративи та творчі події від V DUMTSI.",
-    url: "https://vdumtsi.com",
-    siteName: "V DUMTSI",
-    locale: "uk_UA",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: absoluteUrl("/og-image.jpg"),
         width: 1200,
         height: 630,
         alt: "V DUMTSI — майстер‑класи з флористики у Львові",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [absoluteUrl("/og-image.jpg")],
+  },
+  verification: siteConfig.googleSiteVerification
+    ? {
+        google: siteConfig.googleSiteVerification,
+      }
+    : undefined,
   robots: {
-    index: true,
-    follow: true,
+    index: siteConfig.isIndexable,
+    follow: siteConfig.isIndexable,
     googleBot: {
-      index: true,
-      follow: true,
+      index: siteConfig.isIndexable,
+      follow: siteConfig.isIndexable,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
   other: {
-    "geo.region": "UA-46",
-    "geo.placename": "Львів",
-    "geo.position": "49.8397;24.0297",
-    "ICBM": "49.8397, 24.0297",
-    "last-modified": "2025-01-04T00:00:00+00:00",
+    "geo.region": siteConfig.region,
+    "geo.placename": siteConfig.city,
+    "geo.position": `${siteConfig.coordinates.latitude};${siteConfig.coordinates.longitude}`,
+    ICBM: `${siteConfig.coordinates.latitude}, ${siteConfig.coordinates.longitude}`,
+    "last-modified": siteConfig.lastModified,
   },
   icons: {
     icon: "/favicon.svg",

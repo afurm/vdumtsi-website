@@ -1,4 +1,5 @@
-import { DefaultSeoProps } from "next-seo";
+import type { DefaultSeoProps } from "next-seo";
+import { absoluteUrl, siteConfig } from "@/config/site";
 import {
   address,
   certificate,
@@ -8,22 +9,30 @@ import {
   phoneNumber,
 } from "@/data/masterclasses";
 
+const businessId = `${siteConfig.url}/#business`;
+const websiteId = `${siteConfig.url}/#website`;
+const webpageId = `${siteConfig.url}/#webpage`;
+const ogImageUrl = absoluteUrl("/og-image.jpg");
+const businessImages = [
+  ogImageUrl,
+  absoluteUrl("/images/masterclasses/brand-workshop-hero.webp"),
+  absoluteUrl("/images/masterclasses/gift-certificate.webp"),
+];
+
 export const defaultSEO: DefaultSeoProps = {
-  title: "Майстер‑класи з флористики у Львові | V DUMTSI",
-  description:
-    "Індивідуальні та групові майстер‑класи з флористики у Львові. Подарункові сертифікати, корпоративи, дівич‑вечори та творчі події від V DUMTSI.",
-  canonical: "https://vdumtsi.com",
+  title: siteConfig.title,
+  description: siteConfig.description,
+  canonical: siteConfig.url,
   openGraph: {
     type: "website",
-    locale: "uk_UA",
-    url: "https://vdumtsi.com",
-    siteName: "V DUMTSI",
-    title: "Майстер‑класи з флористики у Львові | V DUMTSI",
-    description:
-      "Індивідуальні та групові майстер‑класи з флористики у Львові. Подарункові сертифікати, корпоративи, дівич‑вечори та творчі події від V DUMTSI.",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: [
       {
-        url: "/og-image.jpg",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: "V DUMTSI — майстер‑класи з флористики у Львові",
@@ -36,32 +45,31 @@ export const defaultSEO: DefaultSeoProps = {
   additionalMetaTags: [
     {
       name: "keywords",
-      content:
-        "майстер‑клас з флористики Львів, флористичний майстер‑клас Львів, подарунковий сертифікат майстер‑клас флористика, корпоративний майстер‑клас Львів, дівич‑вечір Львів майстер‑клас, V DUMTSI майстер‑клас",
+      content: siteConfig.keywords.join(", "),
     },
     {
       name: "author",
-      content: "V DUMTSI",
+      content: siteConfig.name,
     },
     {
       name: "robots",
-      content: "index, follow",
+      content: siteConfig.isIndexable ? "index, follow" : "noindex, nofollow",
     },
     {
       name: "geo.region",
-      content: "UA-46",
+      content: siteConfig.region,
     },
     {
       name: "geo.placename",
-      content: "Львів",
+      content: siteConfig.city,
     },
     {
       name: "geo.position",
-      content: "49.8397;24.0297",
+      content: `${siteConfig.coordinates.latitude};${siteConfig.coordinates.longitude}`,
     },
     {
       name: "ICBM",
-      content: "49.8397, 24.0297",
+      content: `${siteConfig.coordinates.latitude}, ${siteConfig.coordinates.longitude}`,
     },
   ],
   additionalLinkTags: [
@@ -81,7 +89,7 @@ export const defaultSEO: DefaultSeoProps = {
     {
       rel: "alternate",
       hrefLang: "uk",
-      href: "https://vdumtsi.com",
+      href: siteConfig.url,
     },
   ],
 };
@@ -94,16 +102,13 @@ const offerItems = formats.map((format) => ({
   availability: "https://schema.org/InStock",
   areaServed: {
     "@type": "City",
-    name: "Львів",
+    name: siteConfig.city,
   },
   itemOffered: {
     "@type": "Course",
     name: format.title,
     description: format.summary,
-    provider: {
-      "@type": "Organization",
-      name: "V DUMTSI",
-    },
+    provider: { "@id": businessId },
     teaches:
       format.id === "individual"
         ? ["підбір квітів", "флористичні техніки", "створення композиції"]
@@ -123,57 +128,112 @@ const offerItems = formats.map((format) => ({
 
 export const jsonLdSchema = {
   "@context": "https://schema.org",
-  "@type": "FloristShop",
-  name: "V DUMTSI",
-  alternateName: "V DUMTSI floristry studio",
-  description:
-    "Авторські майстер‑класи з флористики у Львові: індивідуальні заняття, камерні групи, корпоративи, події та подарункові сертифікати.",
-  url: "https://vdumtsi.com",
-  telephone: phoneNumber,
-  email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: address,
-    addressLocality: "Львів",
-    addressRegion: "Львівська область",
-    postalCode: "79000",
-    addressCountry: "UA",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 49.8397,
-    longitude: 24.0297,
-  },
-  openingHours: "Mo-Fr 09:00-19:00, Sa 10:00-18:00",
-  priceRange: "$$",
-  sameAs: [instagramUrl],
-  image: [
-    "https://vdumtsi.com/og-image.jpg",
-    "https://vdumtsi.com/images/masterclasses/brand-workshop-hero.webp",
-    "https://vdumtsi.com/images/masterclasses/gift-certificate.webp",
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Майстер‑класи з флористики V DUMTSI",
-    itemListElement: [
-      ...offerItems,
-      {
-        "@type": "Offer",
-        name: certificate.title,
-        price: "6500",
-        priceCurrency: "UAH",
-        availability: "https://schema.org/InStock",
-        itemOffered: {
-          "@type": "Service",
-          name: certificate.title,
-          description:
-            "Подарунковий сертифікат на персональний майстер‑клас з флористики 1:1 у Львові.",
-          provider: {
-            "@type": "Organization",
-            name: "V DUMTSI",
-          },
-        },
+  "@graph": [
+    {
+      "@type": "Florist",
+      "@id": businessId,
+      name: siteConfig.name,
+      alternateName: "V DUMTSI floristry studio",
+      description:
+        "Авторські майстер‑класи з флористики у Львові: індивідуальні заняття, камерні групи, корпоративи, події та подарункові сертифікати.",
+      url: siteConfig.url,
+      telephone: phoneNumber,
+      email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: address,
+        addressLocality: siteConfig.city,
+        addressRegion: "Львівська область",
+        postalCode: "79000",
+        addressCountry: "UA",
       },
-    ],
-  },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.coordinates.latitude,
+        longitude: siteConfig.coordinates.longitude,
+      },
+      areaServed: {
+        "@type": "City",
+        name: siteConfig.city,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "19:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "10:00",
+          closes: "18:00",
+        },
+      ],
+      priceRange: "$$",
+      paymentAccepted: "Bank transfer",
+      currenciesAccepted: "UAH",
+      sameAs: [instagramUrl],
+      image: businessImages,
+      logo: absoluteUrl("/brand/v-dumtsi-logo-dark.png"),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Майстер‑класи з флористики V DUMTSI",
+        itemListElement: [
+          ...offerItems,
+          {
+            "@type": "Offer",
+            name: certificate.title,
+            price: "6500",
+            priceCurrency: "UAH",
+            availability: "https://schema.org/InStock",
+            itemOffered: {
+              "@type": "Service",
+              name: certificate.title,
+              description:
+                "Подарунковий сертифікат на персональний майстер‑клас з флористики 1:1 у Львові.",
+              provider: { "@id": businessId },
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      publisher: { "@id": businessId },
+      inLanguage: "uk-UA",
+    },
+    {
+      "@type": "WebPage",
+      "@id": webpageId,
+      url: siteConfig.url,
+      name: siteConfig.title,
+      description: siteConfig.description,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": businessId },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: ogImageUrl,
+        width: 1200,
+        height: 630,
+      },
+      inLanguage: "uk-UA",
+      dateModified: siteConfig.lastModified,
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteConfig.url}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Головна",
+          item: siteConfig.url,
+        },
+      ],
+    },
+  ],
 };
