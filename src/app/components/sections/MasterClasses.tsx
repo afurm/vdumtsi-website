@@ -227,7 +227,7 @@ export default function MasterClasses() {
           <div className="grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
             <SectionHeading
               title="Групові формати"
-              description="Для невеликих зустрічей, свят, командних подій і корпоративів. Ціна прив'язана до кількості учасників, а тема узгоджується окремо."
+              description="Для невеликих зустрічей, свят, командних подій і корпоративів. Ціна прив’язана до кількості учасників, а тема узгоджується окремо."
             />
             <div className="grid gap-5 md:grid-cols-3">
               {groupFormats.map((format) => (
