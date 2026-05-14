@@ -42,11 +42,10 @@ function SectionHeading({
 
 function CheckList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3">
+    <ul className="list-disc space-y-3 pl-5 marker:text-dark-green">
       {items.map((item) => (
-        <li key={item} className="flex gap-3 text-sm leading-6 text-text-secondary">
-          <span className="mt-2 h-1.5 w-1.5 flex-none bg-secondary" />
-          <span>{item}</span>
+        <li key={item} className="text-sm leading-6 text-text-secondary">
+          <span className="pl-1">{item}</span>
         </li>
       ))}
     </ul>
