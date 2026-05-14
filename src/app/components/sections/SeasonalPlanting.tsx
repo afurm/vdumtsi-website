@@ -38,7 +38,7 @@ const processSteps = [
   {
     step: "03",
     title: "Реалізація",
-    description: "Втілюємо проект у життя з якісними рослинами"
+    description: "Втілюємо проєкт у життя з якісними рослинами"
   },
   {
     step: "04",
@@ -169,4 +169,4 @@ export default function SeasonalPlanting() {
       </div>
     </section>
   );
-} 
+}

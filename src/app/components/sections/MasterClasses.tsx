@@ -316,7 +316,7 @@ export default function MasterClasses() {
           <div>
             <SectionHeading
               title={certificate.title}
-              description="Сертифікат позиціонується як подарунок на персональний майстер‑клас із флористом."
+              description="Сертифікат можна подарувати на персональний майстер‑клас із флористом."
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               <div className="rounded-lg border border-dark-green/20 bg-white/50 p-5">

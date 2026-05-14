@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 py-6 text-sm text-primary/50 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 V DUMTSI. Всі права захищені.</p>
+          <p>© 2026 V DUMTSI. Усі права захищені.</p>
           <p>Флористична студія V DUMTSI</p>
         </div>
       </div>
