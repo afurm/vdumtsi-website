@@ -20,19 +20,19 @@ const variantClasses = {
 const sizeClasses = {
   sm: 'p-4 rounded-md',
   md: 'p-6 rounded-lg',
-  lg: 'p-8 rounded-xl'
+  lg: 'p-8 rounded-lg'
 };
 
-export default function Card({ 
-  children, 
-  className, 
+export default function Card({
+  children,
+  className,
   variant = 'default',
   size = 'md',
   hover = false,
   onClick
 }: CardProps) {
   const Component = onClick ? 'button' : 'div';
-  
+
   return (
     <Component
       onClick={onClick}
@@ -41,11 +41,11 @@ export default function Card({
         variantClasses[variant],
         sizeClasses[size],
         hover && 'hover:shadow-lg hover:scale-105',
-        onClick && 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2',
+        onClick && 'cursor-pointer',
         className
       )}
     >
       {children}
     </Component>
   );
-} 
+}

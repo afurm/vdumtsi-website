@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
-import MobileCtaBar from "./components/layout/MobileCtaBar";
 
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-playfair",
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-bebas-neue",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Майстер-класи та висадка композицій у Львові | V DUMTSI",
-  description: "Флористична студія V DUMTSI у Львові пропонує авторські майстер-класи та висадку сезонних композицій. Відчуйте красу квітів разом з нами.",
-  keywords: "майстер-класи флористика Львів, навчання флористиці Львів, курси флористики Львів, висадка сезонних композицій Львів, флорист Львів, флористична студія Львів, квіткові майстер-класи, букети своїми руками Львів, японська флористика кензан, композиції в гарбузі Львів, зимові віночки майстер-клас, Марʼяна Фурманець флорист",
+  title: "Майстер‑класи з флористики у Львові | V DUMTSI",
+  description:
+    "Індивідуальні та групові майстер‑класи з флористики у Львові. Подарункові сертифікати, корпоративи, дівич‑вечори та творчі події від V DUMTSI.",
+  keywords:
+    "майстер‑клас з флористики Львів, флористичний майстер‑клас Львів, подарунковий сертифікат майстер‑клас флористика, корпоративний майстер‑клас Львів, дівич‑вечір Львів майстер‑клас, V DUMTSI майстер‑клас",
   authors: [{ name: "V DUMTSI" }],
   creator: "V DUMTSI",
   publisher: "V DUMTSI",
@@ -31,8 +27,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Майстер-класи та висадка композицій у Львові | V DUMTSI",
-    description: "Флористична студія V DUMTSI у Львові пропонує авторські майстер-класи та висадку сезонних композицій.",
+    title: "Майстер‑класи з флористики у Львові | V DUMTSI",
+    description:
+      "Індивідуальні та групові майстер‑класи з флористики у Львові. Сертифікати, корпоративи та творчі події від V DUMTSI.",
     url: "https://vdumtsi.com",
     siteName: "V DUMTSI",
     locale: "uk_UA",
@@ -42,7 +39,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "V DUMTSI - Флористична студія у Львові",
+        alt: "V DUMTSI — майстер‑класи з флористики у Львові",
       },
     ],
   },
@@ -56,9 +53,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-site-verification-code",
   },
   other: {
     "geo.region": "UA-46",
@@ -79,10 +73,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="uk" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="uk" className={bebasNeue.variable}>
       <body className="font-sans antialiased">
         {children}
-        <MobileCtaBar />
       </body>
     </html>
   );

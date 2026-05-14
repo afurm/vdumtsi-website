@@ -1,95 +1,104 @@
 import Link from "next/link";
+import Image from "next/image";
+import {
+  address,
+  email,
+  instagramHandle,
+  instagramUrl,
+  mapsUrl,
+  phoneHref,
+  phoneNumber,
+} from "@/data/masterclasses";
+
+const quickLinks = [
+  { name: "Формати", href: "#formats" },
+  { name: "Індивідуальний МК", href: "#individual" },
+  { name: "Теми", href: "#topics" },
+  { name: "Сертифікат", href: "#certificate" },
+  { name: "Умови", href: "#terms" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-primary/20 pt-16 pb-8">
+    <footer className="bg-moss pt-16 text-primary md:pt-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Brand */}
+        <div className="grid gap-10 border-b border-primary/20 pb-12 md:grid-cols-[1.25fr_0.85fr_1fr]">
           <div>
-            <h3 className="font-serif text-2xl text-dark-green mb-4">V DUMTSI</h3>
-            <p className="text-text-secondary">
-              Флористична студія у Львові<br />
-              З любовʼю до квітів 🌸
+            <Image
+              src="/brand/v-dumtsi-logo-light.png"
+              alt="V DUMTSI"
+              width={860}
+              height={804}
+              className="h-auto w-28 object-contain"
+            />
+            <p className="mt-6 max-w-md text-base leading-7 text-primary/75">
+              Авторські майстер‑класи з флористики у Львові: індивідуальні
+              заняття, камерні групи, корпоративи, події та подарункові
+              сертифікати.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-dark-green mb-4">Швидкі посилання</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#masterclasses" className="text-text-secondary hover:text-secondary transition-colors">
-                  Майстер-класи
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-text-secondary hover:text-secondary transition-colors">
-                  Послуги висадки
-                </Link>
-              </li>
-              <li>
-                <Link href="#gallery" className="text-text-secondary hover:text-secondary transition-colors">
-                  Галерея робіт
-                </Link>
-              </li>
+            <h3 className="text-base font-semibold text-primary">Швидкі посилання</h3>
+            <ul className="mt-4">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex min-h-11 min-w-11 items-center text-primary/70 hover:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="font-semibold text-dark-green mb-4">Контакти</h4>
-            <div className="space-y-2">
-              <p className="text-text-secondary">
-                <a href="tel:+380734304649" className="hover:text-secondary transition-colors">
-                  +38 (073) 430-46-49
+            <h3 className="text-base font-semibold text-primary">Контакти</h3>
+            <div className="mt-4 text-primary/75">
+              <p>
+                <a href={phoneHref} className="inline-flex min-h-11 items-center hover:text-primary">
+                  {phoneNumber}
                 </a>
               </p>
-              <p className="text-text-secondary">
-                <a 
-                  href="https://instagram.com/vdumtsi.studio.floristry" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors"
+              <p>
+                <a
+                  href={`mailto:${email}`}
+                  className="inline-flex min-h-11 items-center hover:text-primary"
                 >
-                  @vdumtsi.studio.floristry
+                  {email}
                 </a>
               </p>
-              <p className="text-text-secondary">
-                <a 
-                  href="https://maps.google.com/?q=вул.+Малоголосківська,+12-Г,+Львів,+Львівська+область"
+              <p>
+                <a
+                  href={instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-secondary transition-colors"
+                  className="inline-flex min-h-11 items-center hover:text-primary"
                 >
-                  вул. Малоголосківська, 12-Г<br />
-                  Львів, Львівська область, 79000
+                  {instagramHandle}
                 </a>
               </p>
-              <p className="text-text-secondary">
-                <a href="mailto:vdumtsi@gmail.com" className="hover:text-secondary transition-colors">
-                  vdumtsi@gmail.com
+              <p>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center hover:text-primary"
+                >
+                  {address}
                 </a>
-              </p>
-              <p className="text-text-secondary">
-                Марʼяна Фурманець - професійний флорист
-              </p>
-              <p className="text-text-secondary text-sm">
-                Понеділок-П&apos;ятниця: 9:00-19:00<br />
-                Субота: 10:00-18:00
               </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-secondary/20 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-text-secondary">
-            <p>© 2025 V DUMTSI. Всі права захищені.</p>
-            <p className="mt-2 md:mt-0">З любовʼю до квітів у Львові 🌸</p>
-          </div>
+        <div className="flex flex-col gap-3 py-6 text-sm text-primary/50 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 V DUMTSI. Всі права захищені.</p>
+          <p>Флористична студія V DUMTSI</p>
         </div>
       </div>
     </footer>
   );
-} 
+}

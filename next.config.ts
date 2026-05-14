@@ -77,15 +77,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/gallery/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
         source: '/:path*\\.(jpg|jpeg|png|webp|avif|gif|svg)',
         headers: [
           {
