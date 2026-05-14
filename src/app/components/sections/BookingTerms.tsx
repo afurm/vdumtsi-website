@@ -14,8 +14,8 @@ export default function BookingTerms() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-text-secondary">
             Дату майстер‑класу резервуємо після оплати або передоплати. Для
-            корпоративів окремо погоджуємо формат розрахунку, документи та
-            деталі проведення.
+            корпоративних клієнтів окремо погоджуємо формат розрахунку,
+            документи та деталі проведення.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
             <Button href={instagramDirectUrl} external size="lg">

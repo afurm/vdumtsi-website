@@ -33,8 +33,8 @@ export default function Footer() {
             />
             <p className="mt-6 max-w-md text-base leading-7 text-primary/75">
               Авторські майстер‑класи з флористики у Львові: індивідуальні
-              заняття, камерні групи, корпоративи, події та подарункові
-              сертифікати.
+              заняття, камерні групи, формати для корпоративних клієнтів,
+              події та подарункові сертифікати.
             </p>
           </div>
 
@@ -95,7 +95,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3 py-6 text-sm text-primary/50 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 V DUMTSI. Усі права захищені.</p>
+          <p>
+            © 2026 <span className="whitespace-nowrap">V DUMTSI.</span> Усі права захищені.
+          </p>
           <p>Флористична студія V DUMTSI</p>
         </div>
       </div>

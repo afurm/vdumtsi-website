@@ -47,8 +47,9 @@ export default function Hero() {
             Майстер‑класи з флористики у Львові
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-primary/80 md:text-xl">
-            Індивідуальні заняття, групові майстер‑класи, корпоративи та
-            подарункові сертифікати від бренду V DUMTSI.
+            Індивідуальні заняття, групові майстер‑класи, формати для
+            корпоративних клієнтів та подарункові сертифікати від бренду{" "}
+            <span className="whitespace-nowrap">V DUMTSI.</span>
           </p>
 
           <div className="relative mt-8 aspect-[5/4] overflow-hidden rounded-lg border border-primary/20 bg-forest shadow-xl shadow-black/20 lg:hidden">
