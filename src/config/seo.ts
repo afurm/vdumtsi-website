@@ -75,7 +75,25 @@ export const defaultSEO: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: "icon",
+      href: "/favicon.ico",
+      sizes: "any",
+    },
+    {
+      rel: "icon",
       href: "/favicon.svg",
+      type: "image/svg+xml",
+    },
+    {
+      rel: "icon",
+      href: "/icon-48x48.png",
+      sizes: "48x48",
+      type: "image/png",
+    },
+    {
+      rel: "icon",
+      href: "/icon-192x192.png",
+      sizes: "192x192",
+      type: "image/png",
     },
     {
       rel: "apple-touch-icon",
