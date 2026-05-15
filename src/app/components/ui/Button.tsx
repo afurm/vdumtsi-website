@@ -18,15 +18,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
-      primary: "bg-dark-green text-white hover:bg-forest shadow-sm hover:shadow-md",
-      secondary: "border-2 border-secondary text-dark-green hover:bg-secondary/10",
-      glass: "glass glass-hover text-dark-green hover:scale-[1.02]",
-      ghost: "bg-transparent text-dark-green hover:bg-white/10 border border-transparent",
+      primary: "bg-dark-green text-primary hover:bg-forest",
+      secondary: "border border-secondary text-dark-green hover:bg-secondary/10",
+      glass: "border border-dark-green/20 bg-white/80 text-dark-green hover:bg-primary",
+      ghost: "border border-transparent bg-transparent text-dark-green hover:bg-dark-green/5",
     };
 
     const classes = cn(
-      "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-200",
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 focus-visible:ring-offset-2",
+      "inline-flex min-h-11 items-center justify-center rounded-md font-medium transition-colors duration-200",
       "disabled:opacity-50 disabled:pointer-events-none",
       sizeClasses[size],
       variantClasses[variant],
@@ -64,4 +63,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = "Button";
 
-export default Button; 
+export default Button;

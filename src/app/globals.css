@@ -1,11 +1,11 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
+  --font-brand-display: "AA Bebas Neue", "Arial Narrow", "Arial Narrow Condensed", var(--font-bebas-neue), sans-serif;
+  --font-brand-body: "Arial Narrow Condensed", "Arial Narrow", "Aptos Narrow", "Helvetica Neue", Arial, sans-serif;
+
   /* Primary Colors */
   --color-primary: #d6d2c4;
   --color-secondary: #97A59A;
@@ -23,8 +23,9 @@
   --color-orange: #F15B29;
   --color-cream: #F5F5B8;
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(180deg, #d6d2c4 0%, rgba(214, 210, 196, 0) 100%);
+  --color-surface: #f8f7f1;
+  --focus-ring: #18332f;
+  --focus-halo: #d6d2c4;
 }
 
 @layer base {
@@ -33,11 +34,11 @@
   }
   
   body {
-    @apply font-sans text-text-primary bg-white antialiased;
+    @apply bg-primary font-sans text-text-primary antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-bold tracking-tight;
+    @apply font-display font-normal;
   }
   
   h1 {
@@ -60,13 +61,14 @@
     @apply transition-colors duration-200;
   }
   
-  /* Custom focus styles */
   *:focus {
-    @apply outline-none;
+    outline: none;
   }
   
   *:focus-visible {
-    @apply ring-2 ring-secondary ring-offset-2;
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px var(--focus-halo);
   }
 }
 
@@ -82,13 +84,9 @@
   }
   
   /* Text styles */
-  .text-gradient {
-    @apply bg-gradient-to-r from-dark-green to-secondary bg-clip-text text-transparent;
-  }
-  
   /* Button base styles */
   .btn {
-    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50;
   }
   
   .btn-primary {
@@ -124,29 +122,4 @@
   .animate-on-scroll.show {
     @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
   }
-}
-
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-10px) rotate(5deg);
-  }
-  66% {
-    transform: translateY(5px) rotate(-5deg);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delay-1 {
-  animation: float 6s ease-in-out infinite 2s;
-}
-
-.animate-float-delay-2 {
-  animation: float 6s ease-in-out infinite 4s;
 }

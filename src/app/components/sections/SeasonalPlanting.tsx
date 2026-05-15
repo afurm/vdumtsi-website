@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 
 const services = [
   {
-    title: "Інтер'єрні композиції",
+    title: "Інтер’єрні композиції",
     description: "Оформлення приміщень живими рослинами",
     features: ["Кімнатні рослини", "Стильні кашпо", "Догляд і підтримка"],
     icon: "🏠"
@@ -38,7 +38,7 @@ const processSteps = [
   {
     step: "03",
     title: "Реалізація",
-    description: "Втілюємо проект у життя з якісними рослинами"
+    description: "Втілюємо проєкт у життя з якісними рослинами"
   },
   {
     step: "04",
@@ -63,7 +63,7 @@ export default function SeasonalPlanting() {
           </h2>
           <div className="w-20 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Замовте професійну висадку сезонних рослин у кашпо, клумби, інтер&apos;єрні зони. 
+            Замовте професійну висадку сезонних рослин у кашпо, клумби, інтер’єрні зони.
             Ми підбираємо композиції, що відповідають вашому простору, стилю та порі року.
           </p>
         </motion.div>
@@ -159,7 +159,7 @@ export default function SeasonalPlanting() {
               Готові перетворити ваш простір?
             </h3>
             <p className="text-text-secondary mb-6">
-              Зв&apos;яжіться з нами для безкоштовної консультації та індивідуального підбору рослин
+              Зв’яжіться з нами для безкоштовної консультації та індивідуального підбору рослин
             </p>
             <Button href="#contact" size="lg">
               Замовити консультацію
@@ -169,4 +169,4 @@ export default function SeasonalPlanting() {
       </div>
     </section>
   );
-} 
+}

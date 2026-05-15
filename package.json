@@ -5,19 +5,18 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "postbuild": "node scripts/update-sitemap.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
-    "next": "15.3.5",
+    "next": "15.5.18",
     "next-seo": "^6.8.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
     "react-hook-form": "^7.59.0",
-    "sharp": "^0.34.2",
+    "sharp": "0.34.2",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
@@ -27,9 +26,12 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
-    "eslint-config-next": "15.3.5",
-    "postcss": "^8.5.6",
+    "eslint-config-next": "15.5.18",
+    "postcss": "^8.5.14",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "$postcss"
   }
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { getResponsiveImageSizes, generateBlurDataURL } from "@/lib/image-seo";
+import { heroImage } from "@/data/masterclasses";
 
 export default function About() {
   return (
@@ -28,10 +29,9 @@ export default function About() {
             className="relative"
           >
             <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-glass border border-white/20 bg-white/10 backdrop-blur-xl">
-              {/* Founder image */}
               <Image
-                src="/founder.jpg"
-                alt="Мар'яна Фурманець — засновниця студії флористики V DUMTSI у Львові, майстер флористичних композицій та викладач майстер-класів"
+                src={heroImage.src}
+                alt={heroImage.alt}
                 fill
                 sizes={getResponsiveImageSizes('about')}
                 priority
@@ -55,21 +55,22 @@ export default function About() {
             <h3 className="font-serif text-3xl text-dark-green mb-6">Про засновницю</h3>
             <div className="space-y-4 text-text-secondary">
               <p>
-                Я - Мар’яна Фурманець, флористка з понад 6-річним досвідом і авторка бренду Vdumtsi. 
-                Моя любов до естетики та квітів надихає створювати унікальні композиції будь-якої складності.
+                Я — Мар’яна Фурманець, флористка з понад 6‑річним досвідом і авторка бренду{" "}
+                <span className="whitespace-nowrap">V DUMTSI.</span>
+                Моя любов до естетики та квітів надихає створювати унікальні композиції будь‑якої складності.
               </p>
               <p>
-                Для мене флористика - це не просто краса, а спосіб пригальмувати, відчути сезон, настрій і цінність моменту. 
+                Для мене флористика — це не просто краса, а спосіб пригальмувати, відчути сезон, настрій і цінність моменту.
                 Працюю лише з якісними матеріалами та додаю брендовані деталі, щоб кожна композиція була продуманою до дрібниць.
               </p>
               <p>
-                Майстер-класи, які я провожу - це завжди живий простір тепла, уваги до себе і краси, яку можна створити власноруч. 
-                Ділюся знаннями, яких не отримати на коротких курсах, і завжди готова відповісти на ваші питання - 
+                Майстер‑класи, які я проводжу, — це завжди живий простір тепла, уваги до себе і краси, яку можна створити власноруч.
+                Ділюся знаннями, яких не отримати на коротких курсах, і завжди готова відповісти на ваші запитання —
                 навіть після їх завершення.
               </p>
               <p>
-                Проводжу майстер-класи виїзного формату на локаціях у Львові та області. Завжди враховую усі ваші побажання 
-                до найменших дрібниць - чи це корпоративний захід, чи святкова подія.
+                Проводжу майстер‑класи виїзного формату на локаціях у Львові та області. Завжди враховую усі ваші побажання
+                до найменших дрібниць — чи це запит корпоративного клієнта, чи святкова подія.
               </p>
             </div>
 
@@ -86,7 +87,7 @@ export default function About() {
                 className="text-center"
               >
                 <div className="text-3xl font-bold text-dark-green mb-2">100+</div>
-                <div className="text-sm text-text-muted">майстер-класів</div>
+                <div className="text-sm text-text-muted">майстер‑класів</div>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -101,4 +102,4 @@ export default function About() {
       </div>
     </section>
   );
-} 
+}
